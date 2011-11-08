@@ -1,0 +1,29 @@
+<%= name %>:
+  domain:
+<% domain.each do |d| -%>
+  - name: "<%= d %>"
+  <% if role != '' %>
+  - roles: 
+    <%= role[d].each do |r| %>
+    - "<%= r %>"
+    <% end -%>
+  <% end -%>
+<% end -%>
+  deploy_to: <%= deploy_to %>
+  repository: <%= repository %>
+  <% if config_repository != '' -%>
+  config_repository: <%= config_repository %>
+  config_branch: <%= config_branch %>
+  config_target: <%= config_target %>
+  <% end %>
+  branch: <%= branch %>
+  <% if post_setup_script != '' -%>
+  post_setup_script: <%= post_setup_script %>
+  <% end %>
+  <% if post_deploy_script != '' -%>
+  post_deploy_script: <%= post_deploy_script %>
+  <% end %>
+  rake_env: 
+    <% rake_env.each do |k,v| -%>
+    <%= k %>: '<%= v %>' 
+    <% end %>
