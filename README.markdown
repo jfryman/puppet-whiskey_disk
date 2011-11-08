@@ -4,6 +4,9 @@ James Fryman <james@frymanet.com>
 
 This module manages Whiskey Disk (wd) deployments within Puppet
 
+Whiskey Disk
+- http://github.com/flogic/whiskey_disk
+
 # Quick Start
 
 Install and bootstrap Whiskey Disk for Puppet
